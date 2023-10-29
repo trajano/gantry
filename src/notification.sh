@@ -22,6 +22,7 @@ notify_via_apprise() {
   if [ -z "${URL}" ]; then
     return 0
   fi
+  log INFO "sending message to ${URL}"
   curl -X POST -H "Content-Type: application/json" --data "{\"title\": \"${TITLE}\", \"body\": \"${BODY}\"}" "${URL}"
 }
 
